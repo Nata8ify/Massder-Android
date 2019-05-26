@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.n8ify.spooky"
+        applicationId "com.domain.massder"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -16,24 +16,24 @@ android {
     }
     buildTypes {
 
-        def spookyBaseUrl = "SPOOKY_BASE_URL"
+        def massderBaseUrl = "MASSDER_BASE_URL"
 
         debug {
-            buildConfigField("String", spookyBaseUrl, "\"https://radiant-shore-70316.herokuapp.com/\"")
+            buildConfigField("String", massderBaseUrl, "\"https://DEBUG_ENV_URL.com/\"")
         }
 
         local.initWith(buildTypes.debug)
         local {
-            buildConfigField("String", spookyBaseUrl, "\"http://192.168.43.62:8080/\"")
+            buildConfigField("String", massderBaseUrl, "\"https://LOCAL_ENV_URL.com/\"")
         }
 
         prod.initWith(buildTypes.debug)
         prod {
-            buildConfigField("String", spookyBaseUrl, "\"https://radiant-shore-70316.herokuapp.com/\"")
+            buildConfigField("String", massderBaseUrl, "\"https://PROD_ENV_URL.com/\"")
         }
 
         release {
-            buildConfigField("String", spookyBaseUrl, "\"https://radiant-shore-70316.herokuapp.com/\"")
+            buildConfigField("String", massderBaseUrl, "\"https://PROD_ENV_URL.com./\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
