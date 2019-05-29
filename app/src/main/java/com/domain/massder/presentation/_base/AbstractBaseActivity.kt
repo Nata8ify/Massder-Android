@@ -23,12 +23,14 @@ abstract class AbstractBaseActivity : AppCompatActivity() {
         initPostCreateListener()
         initPostCreateObserver()
         initPostLoadAsync()
+        initPostCreateAction()
     }
 
     open fun initPostCreateView() {}
     open fun initPostCreateListener() {}
     open fun initPostCreateObserver() {}
     open fun initPostLoadAsync() {}
+    open fun initPostCreateAction() {}
 
     fun startActivity(activityClass: Class<out AppCompatActivity>) {
         startActivity(Intent(this, activityClass))
