@@ -36,6 +36,8 @@
     <string name="common_notify">แจ้งเตือน</string>
     <string name="common_reserve">จอง</string>
     <string name="common_review">รีวิว</string>
+    <string name="common_free_cancel">ยกเลิกฟรี</string>
+    <string name="common_per_person">ต่อคน</string>
 
     <!-- Date and Time  -->
     <string name="date_yesterday">เมื่อวาน</string>

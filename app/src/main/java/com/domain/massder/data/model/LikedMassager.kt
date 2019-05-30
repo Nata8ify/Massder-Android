@@ -1,0 +1,18 @@
+package com.domain.massder.data.model
+
+data class LikedMassager(
+    override val id: Int,
+    override val name: String,
+    override val rating: Float,
+    override val ratingAmount: Int,
+    override val operateArea: String,
+    override val bio: String,
+    override val serviceFee: Double,
+    override val isFreeCancel: Boolean
+) : Massager(id, name, rating, ratingAmount, operateArea, bio, serviceFee, isFreeCancel)
+
+fun getMockedLikedMassager() : List<LikedMassager> = listOf(
+    LikedMassager(101, "เฉิดฉาย สะพายกระเป๋า", 5.0F, 21, "กรุงเทพฯ", "วิกิพีเดียดำเนินการโดยมูลนิธิวิกิมีเดีย องค์กรไม่แสวงผลกำไร ... นอกจากภาษาไทยแล้ว วิกิพีเดียยังมีรุ่นภาษาอื่นอีก 300 ภาษา โดยวิกิพีเดียขนาดใหญ่แสดงรายการด้านล่างนี้.", 1580.00, true)
+    , LikedMassager(102, "จันทรา นาปรัง", 4.5F, 456, "กรุงเทพฯ", "วิกิพีเดียดำเนินการโดยมูลนิธิวิกิมีเดีย องค์กรไม่แสวงผลกำไร ... นอกจากภาษาไทยแล้ว วิกิพีเดียยังมีรุ่นภาษาอื่นอีก 300 ภาษา โดยวิกิพีเดียขนาดใหญ่แสดงรายการด้านล่างนี้.", 2185.00, true)
+    , LikedMassager(103, "ปารีณา มีอาวุธ", 4.0F, 2121, "กรุงเทพฯ", "วิกิพีเดียดำเนินการโดยมูลนิธิวิกิมีเดีย องค์กรไม่แสวงผลกำไร ... นอกจากภาษาไทยแล้ว วิกิพีเดียยังมีรุ่นภาษาอื่นอีก 300 ภาษา โดยวิกิพีเดียขนาดใหญ่แสดงรายการด้านล่างนี้.", 1650.00, true)
+)
