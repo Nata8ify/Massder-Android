@@ -2,6 +2,7 @@ package com.domain.massder.presentation.main
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.core.view.marginTop
 import com.domain.massder.R
 import com.domain.massder.presentation._base.AbstractBaseActivity
 import com.domain.massder.presentation.main.fragment.LikedFragment
@@ -27,13 +28,13 @@ class MainActivity : AbstractBaseActivity() {
 
     override fun initPostCreateListener() {
         RxView.clicks(tv_tab_main).subscribeBy {
-            supportFragmentManager.beginTransaction().replace(lv_main_container.id, MainFragment.newInstance()).commit()
+            supportFragmentManager.beginTransaction().replace(ll_main_container.id, MainFragment.newInstance()).commit()
         }
         RxView.clicks(tv_tab_liked).subscribeBy {
-            supportFragmentManager.beginTransaction().replace(lv_main_container.id, LikedFragment.newInstance()).commit()
+            supportFragmentManager.beginTransaction().replace(ll_main_container.id, LikedFragment.newInstance()).commit()
         }
         RxView.clicks(tv_tab_message).subscribeBy {
-            supportFragmentManager.beginTransaction().replace(lv_main_container.id, MessageFragment.newInstance()).commit()
+            supportFragmentManager.beginTransaction().replace(ll_main_container.id, MessageFragment.newInstance()).commit()
         }
         RxView.clicks(tv_tab_profile).subscribeBy {
             val profileActivityIntent = Intent(applicationContext, ProfileActivity::class.java)

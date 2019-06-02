@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.domain.massder.R
+import com.domain.massder.getMockedMassagePlan
 import com.domain.massder.getMockedRecommendMassager
 import com.domain.massder.getMockedWorkingPlace
 import com.domain.massder.presentation._base.AbstractBaseFragment
+import com.domain.massder.presentation.main.adapter.MassagePlanAdapter
 import com.domain.massder.presentation.main.adapter.RecommendMassgerAdapter
-import com.domain.massder.presentation.main.adapter.WorkingPlaceAdpter
+import com.domain.massder.presentation.main.adapter.WorkingPlaceAdapter
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class MainFragment : AbstractBaseFragment() {
@@ -31,8 +33,12 @@ class MainFragment : AbstractBaseFragment() {
             adapter = RecommendMassgerAdapter.newInstance(getMockedRecommendMassager())
         }
         view.rv_where_we_go.apply {
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
-            adapter = WorkingPlaceAdpter.newInstance(getMockedWorkingPlace())
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = WorkingPlaceAdapter.newInstance(getMockedWorkingPlace())
+        }
+        view.rv_your_best_massage.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = MassagePlanAdapter.newInstance(getMockedMassagePlan())
         }
     }
 }
